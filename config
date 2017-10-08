@@ -1,0 +1,5 @@
+localhost=7474
+mainPath=C:\BioNet-Mining\Iteration1
+pathToParSeMiS=C:\BioNet-Mining\2_ParSeMiS.jar
+minimumFrequency=60%
+maximumFrequency=100%
