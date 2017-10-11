@@ -5,8 +5,8 @@ Once patterns are identified, the textual pattern description can automatically 
 Furthermore, information about the distribution of patterns among the selected set of models can be retrieved.
 The workflow can be applied to a custom set of models or to models already existing in the graph database MaSyMoS.
 
-## Proceeding
-The following illustrates the proceeding from getting an appropriate input file for working with ParSeMiS to the post-processing for image files of the patterns found and computing the pattern distribution. For every step the bash command line is used to invoke scripts and tools. The config-file contains the required parameters and must be adapted. The script-names contain the number of the step in their name.  Execute for every step the corresponding shell-script.
+## Getting started
+The following illustrates the procedure from getting an appropriate input file for working with ParSeMiS to the post-processing for image files of the patterns retrieved and computing the pattern distribution. For every step the bash command line is used to invoke scripts and tools. The config-file contains the required parameters and must be adapted. The script-names contain the number of the step in their name.  Execute for every step the corresponding shell-script.
 
 ### Step 1
 The shell-script queries MaSyMoS to get the reaction networks of all SBML models existing in the database as json-file. As input for ParSeMiS a dot-file is used. Therefore, the json-file gets converted into the dot-format by a php-script. The resulting file contains one big graph with all nodes and edges. Because the nodes from different models are unconnected, the big graph is split into its unconnected subgraphs. 
@@ -15,14 +15,12 @@ The shell-script queries MaSyMoS to get the reaction networks of all SBML models
 By executing the shell-script, ParSemiS runs with the parameters specified in the config, namely a minimum and maximum frequency. The output is a dot file, which contains all the patterns fulfilling the given frequency interval.
 
 ### Step 3a
-Appearence properties are added to the found patterns for the visualisation. Finally, the file is split into separate files and an image file is created for each pattern.
+Appearence properties are added to the retrieved patterns for the visualisation. Finally, the file is split into separate files and an image file is created for each pattern.
 
 ### Step 3b
-In this step the frequency of the patterns within each model are determined
-#### Part 1
-For every pattern a Cypher-query gets created that will return the frequency per model.
-#### Part 2
-Each Cypher-query is executed on MaSyMoS.
+In this step the frequency of the patterns within each model are determined.
+* For every pattern a Cypher-query gets created that will return the frequency per model
+* Each Cypher-query is executed on MaSyMoS
 
 ## Exemplary Application
 We analyzed Release 29 of BioModels Database (in the following referred to as R29) containing 575 curated models and, in addition, compared the results to BioModels first release containing only 30 curated models (in the following referred to as R1).
