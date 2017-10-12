@@ -6,7 +6,7 @@
 # Reading config-file (must be in the same directory)
 echo "Reading config...."
 source config
-echo "Localhost is set to $localhost, main path is set to $mainPath, temporary files will be in ${mainPath}/Temp, path for script results  is ${mainPath}/Results"
+echo "URL for MaSyMoS is set to $masymosURL, main path is set to $mainPath, temporary files will be in ${mainPath}/Temp, path for script results  is ${mainPath}/Results"
 
 # ____________________________________________________________________________
 # Check if mainPath (specified in config) exist and create it if not exist
@@ -28,9 +28,9 @@ if [[ ! -e ${mainPath}/Results ]]; then
 fi
 
 # ____________________________________________________________________________
-# Load all edges, which connect a reaction to a species, from localhost and save them into a json-file called jsonNetworks.json
+# Load all edges, which connect a reaction to a species, from MaSyMoS and save them into a json-file called jsonNetworks.json
 echo "Sending Cypher-query to receive all reaction networks as json-file ..."
-curl -X POST -d '{ "query": "MATCH (r:SBML_REACTION)-[h]->(s:SBML_SPECIES) RETURN ID(r),TYPE(h),ID(s)", "params": {} }' http://${localhost}/db/data/cypher -H "Content-Type: application/json" > ${mainPath}/Temp/networks.json
+curl -X POST -d '{ "query": "MATCH (r:SBML_REACTION)-[h]->(s:SBML_SPECIES) RETURN ID(r),TYPE(h),ID(s)", "params": {} }' ${masymosURL}/db/data/cypher -H "Content-Type: application/json" > ${mainPath}/Temp/networks.json
 
 # ____________________________________________________________________________
 # execute the jsonToDot script (must be in the same directory) that  converts temporary json-file named "networks.json" into a .dot format and use ccomps to split the data to connected graphs
