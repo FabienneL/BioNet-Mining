@@ -1,9 +1,9 @@
 # BioNet-Mining Project (under construction!)
 The repository contains the scripts for a workflow that identifies frequent structural patterns in biochemical reaction networks encoded in the Systems Biology Markup Language. 
 The workflow utilises the frequent subgraph mining algorithm gSpan to detect frequent network patterns. To this end the ParSeMiS project is used, which can be found on https://github.com/timtadh/parsemis. Given a set of graphs, frequent subgraph mining (abbrv. FSM) is an approach to find the subgraphs within these graphs that pass a given frequency threshold. GSpan is an extension based algorithm that takes a graph set as its input and produces all frequent connected subgraphs according to the given frequency threshold.
+The workflow can be applied to a custom set of models or to models already existing in our graph database MaSyMoS (core: https://github.com/ronhenkel/masymos-core, data: https://github.com/FabienneL/BioNet-Mining/tree/master/data). 
 Once patterns are identified, the textual pattern description can automatically be converted into a graphical representation. 
 Furthermore, information about the distribution of patterns among the selected set of models can be retrieved.
-The workflow can be applied to a custom set of models or to models already existing in the graph database MaSyMoS.
 
 ## Getting started
 The following illustrates the procedure from getting an appropriate input file for working with ParSeMiS to the post-processing for image files of the patterns retrieved and computing the pattern distribution. For every step the bash command line is used to invoke scripts and tools. The config-file contains the required parameters and must be adapted. The script-names contain the number of the step in their name.  Execute for every step the corresponding shell-script.
