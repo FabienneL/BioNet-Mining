@@ -6,7 +6,7 @@
 # Reading config-file (must be in the same directory)
 echo "Reading config...."
 source config
-echo "Localhost is set to $localhost, main path is set to $mainPath, temporary files will be in ${mainPath}/Temp, path for script results  is ${mainPath}/Results/3b_PatternDistribution/1_QueryResults"
+echo "URL for MaSyMoS is set to $masymosURL, main path is set to $mainPath, temporary files will be in ${mainPath}/Temp, path for script results  is ${mainPath}/Results/3b_PatternDistribution/1_QueryResults"
 
 # ____________________________________________________________________________
 # Check if mainPath (specified in config) exists and exit script if not exists
@@ -53,13 +53,13 @@ outFilePath=${mainPath}/Results/3b_PatternDistribution/1_QueryResults
 echo "loading list of models as models.json"
 
 # Load for all SBML-models with Species or Reaction(s) the internal ID and BioModels ID and save as models.json
-curl -X POST -d '{ "query": "MATCH (m:SBML_MODEL)-->(d:DOCUMENT) WHERE ((m)-[:HAS_SPECIES]->(:SBML_SPECIES) OR (m)-[:HAS_REACTION]->(:SBML_REACTION)) RETURN DISTINCT ID(m) AS InternalModelID, d.FILENAME AS BioModelsID", "params": {} }' http://${localhost}/db/data/cypher -H "Content-Type: application/json" > ${outFilePath}/models.json
+curl -X POST -d '{ "query": "MATCH (m:SBML_MODEL)-->(d:DOCUMENT) WHERE ((m)-[:HAS_SPECIES]->(:SBML_SPECIES) OR (m)-[:HAS_REACTION]->(:SBML_REACTION)) RETURN DISTINCT ID(m) AS InternalModelID, d.FILENAME AS BioModelsID", "params": {} }' ${masymosURL}/db/data/cypher -H "Content-Type: application/json" > ${outFilePath}/models.json
 
 # ____________________________________________________________________________
 # method to execute query
 executeCypher()
 {
-	curl -X POST -H "Content-Type: application/json" -d @$1 http://${localhost}/db/data/cypher > ${outFilePath}/$1.json
+	curl -X POST -H "Content-Type: application/json" -d @$1 ${masymosURL}/db/data/cypher > ${outFilePath}/$1.json
 }
 
 # ____________________________________________________________________________
