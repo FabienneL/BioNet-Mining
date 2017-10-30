@@ -59,7 +59,10 @@ curl -X POST -d '{ "query": "MATCH (m:SBML_MODEL)-->(d:DOCUMENT) WHERE ((m)-[:HA
 # method to execute query
 executeCypher()
 {
-	curl -X POST -H "Content-Type: application/json" -d @$1 ${masymosURL}/db/data/cypher > ${outFilePath}/$1.json
+	# variable for file name without path
+	fileName=${1##*/}
+	# execute query (content of file)
+	curl -X POST -H "Content-Type: application/json" -d @$1 ${masymosURL}/db/data/cypher > ${outFilePath}/$fileName.json
 }
 
 # ____________________________________________________________________________
