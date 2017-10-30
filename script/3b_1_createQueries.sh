@@ -122,7 +122,7 @@ createCypher()
 	done
 
 	# insert RETURN-clause (last part of Cypher-query)
-	echo " RETURN DISTINCT ID(m) AS InternalModelID, d.FILENAME AS BioModelsID, COUNT(Node_0) AS Frequency ORDER BY sum DESC\"," >> ${outFilePath}
+	echo " RETURN DISTINCT ID(m) AS InternalModelID, d.FILENAME AS BioModelsID, COUNT(Node_0) AS Frequency ORDER BY Frequency DESC\"," >> ${outFilePath}
 	# write last text elements to the query-file required for automatically executing the query later
 	echo "  \"params\":{}" >> ${outFilePath}
 	echo -n "}" >> ${outFilePath}
