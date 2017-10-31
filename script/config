@@ -1,5 +1,5 @@
 masymosURL=http://localhost:7474
 mainPath=/pathToYour/BioNet-Mining/Iteration1
 pathToParSeMiS=/pathTo/BioNet-Mining/2_ParSeMiS.jar
-minimumFrequency=60%
+minimumFrequency=80%
 maximumFrequency=100%
