@@ -11,3 +11,4 @@ Each reaction or species belongs to exactly one SBML-model. For R29 there exist 
 Compared with the first release (R1), the rapid growth of models becomes obvious.
 Data set R1 contains only 30 curated models having 736 reactions and 425 species, respectively.
 An examplary pattern we found is the smallest biologically meaningful circle with two species and two reactions, where each species is a reactant for one reaction and a product of the other reaction. This circle is contained in 330 models of data set R29 and in 25 models of data set R1.
+[![Exemplary Patterns in R1](/exemplaryApplication/bioModelsR1/visualisation/splittedFragments26-19.png)](https://github.com/FabienneL/BioNet-Mining/blob/master/exemplaryApplication/bioModelsR1/visualisation) 
