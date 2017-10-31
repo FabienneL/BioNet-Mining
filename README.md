@@ -11,4 +11,8 @@ Each reaction or species belongs to exactly one SBML-model. For R29 there exist 
 Compared with the first release (R1), the rapid growth of models becomes obvious.
 Data set R1 contains only 30 curated models having 736 reactions and 425 species, respectively.
 An examplary pattern we found is the smallest biologically meaningful circle with two species and two reactions, where each species is a reactant for one reaction and a product of the other reaction. This circle is contained in 330 models of data set R29 and in 25 models of data set R1.
-[![Exemplary Patterns in R1](/exemplaryApplication/bioModelsR1/visualisation/splittedFragments26-19.png)](https://github.com/FabienneL/BioNet-Mining/blob/master/exemplaryApplication/bioModelsR1/visualisation) 
+[![Exemplary pattern in R1](/exemplaryApplication/bioModelsR1/visualisation/splittedFragments26-19.png)](https://github.com/FabienneL/BioNet-Mining/blob/master/exemplaryApplication/bioModelsR1/visualisation) 
+
+Furthermore, it is possible to adapt the scripts to regard semantics for the patterns. A downside is that only 116 out of 575 models in R29 have reaction networks annotated with SBO terms. The following example shows a pattern with species and reactions that are annotated with SBO-terms, particularly it shows the phosphorylation and de-phosphorylation of a polypeptide chain. The pattern is contained in 15 networks retrieved from R29.
+
+[![Exemplary SBO-pattern](/exemplaryApplication/SBO-patterns/visualisation/splittedFragments15-03.png)](https://github.com/FabienneL/BioNet-Mining/tree/master/exemplaryApplication/SBO-patterns/visualisation) 
