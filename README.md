@@ -1,4 +1,4 @@
-# BioNet-Mining Project (under construction!)
+# BioNet-Mining Project
 The repository contains the scripts for a workflow that identifies frequent structural patterns in biochemical reaction networks encoded in the Systems Biology Markup Language. 
 The workflow utilises the frequent subgraph mining algorithm gSpan to detect frequent network patterns. To this end the ParSeMiS project is used, which can be found on https://github.com/timtadh/parsemis. Given a set of graphs, frequent subgraph mining (abbrv. FSM) is an approach to find the subgraphs within these graphs that pass a given frequency threshold. GSpan is an extension based algorithm that takes a graph set as its input and produces all frequent connected subgraphs according to the given frequency threshold.
 The workflow can be applied to a custom set of models or to models already existing in our graph database MaSyMoS (core: https://github.com/ronhenkel/masymos-core, data: https://github.com/FabienneL/BioNet-Mining/tree/master/data). 
@@ -6,7 +6,7 @@ Once patterns are identified, the textual pattern description can automatically 
 Furthermore, information about the distribution of patterns among the selected set of models can be retrieved.
 
 ## Exemplary Application
-We analyzed Release 29 of BioModels Database (in the following referred to as R29) containing 575 curated models and, in addition, compared the results to BioModels first release containing only 30 curated models (in the following referred to as R1).
+We detected patterns for Releases 1, 26, and 29 of BioModels Database. All visualisations of exemplary patterns can be found in https://github.com/FabienneL/BioNet-Mining/tree/master/exemplaryApplication). We further analysed Release 29 of BioModels Database (in the following referred to as R29) containing 575 curated models and, in addition, compared the results to BioModels first release containing only 30 curated models (in the following referred to as R1).
 Each reaction or species belongs to exactly one SBML-model. For R29 there exist 18852 reaction nodes and 16843 species nodes in total.
 Compared with the first release (R1), the rapid growth of models becomes obvious.
 Data set R1 contains only 30 curated models having 736 reactions and 425 species, respectively.
